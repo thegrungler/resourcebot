@@ -24,10 +24,11 @@ def dictString(dict):
 async def ping(interaction):
   await interaction.response.send_message("pong")
 
+#this is the generic template for creating drop table embeds - will probably delete/comment out
 @tree.command(name="template", description="template for pulling resources")
 async def template(interaction):
-  embedVar = discord.Embed(title="Drop tables", color= random.randint(0x000000, 0xffffff)) #Chooses a random hexadecimal value for a color
-  embedVar.add_field(name= "Locations: Rate", value=dictString({"resource": "location"}), inline=False)
+  embedVar = discord.Embed(title="<item> best drop tables", color=0x00ff00)
+  embedVar.add_field(name= "<best location>", value="<rate w/ unit>\n<average runs/kills>\n<average time?>", inline=False)
   await interaction.response.send_message(embed=embedVar)
 
 @client.event
